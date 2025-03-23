@@ -1,0 +1,15 @@
+{
+    "name": "mikerock/php_contact_app",
+    "autoload": {
+        "psr-4": {
+            "Mikerock\\PhpContactApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mike",
+            "email": "mikerockmusic51@gmail.com"
+        }
+    ],
+    "require": {}
+}
