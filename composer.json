@@ -1,8 +1,10 @@
 {
-    "name": "mikerock/php_contact_app",
+    "name": "mikerock/expense_tracker",
+    "type": "project",
     "autoload": {
         "psr-4": {
-            "Mikerock\\PhpContactApp\\": "src/"
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
         }
     },
     "authors": [
