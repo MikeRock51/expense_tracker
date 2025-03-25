@@ -15,7 +15,10 @@ class App {
     }
 
     public function run() {
-        echo 'Hello, world!!!!!!!!!!';
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        $this->router->dispatch($path, $method);
     }
 
     public function add(string $path, array $controller, string $method = 'GET') {

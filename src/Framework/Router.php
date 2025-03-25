@@ -11,7 +11,7 @@ class Router {
         $path = $this->normalizePath($path);
 
         $this->routes[$path] = [
-            'method' => $method,
+            'method' => strtoupper($method),
             'path' => $path,
             'controller' => $controller,
         ];
@@ -22,6 +22,13 @@ class Router {
         $path = $path === '' ? '/' : "/{$path}/";
 
         return $path;
+    }
+
+    public function dispatch(string $path, string $method) {
+        $path = $this->normalizePath($path);
+        $method = strtoupper($method);
+
+        echo $method . $path;
     }
 
 }
