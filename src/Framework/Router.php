@@ -28,7 +28,14 @@ class Router {
         $path = $this->normalizePath($path);
         $method = strtoupper($method);
 
-        echo $method . $path;
+        foreach($this-> routes as $route) {
+            if (preg_match("#^{$route['path']}$#", $path) && $route['method'] === $method) {
+                [$class, $method] = $route['controller'];
+
+                $controllerInstance = new $class;
+                $controllerInstance->{$method}();
+            }
+        }
     }
 
 }
