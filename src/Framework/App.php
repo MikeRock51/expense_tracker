@@ -9,6 +9,6 @@ require __DIR__ . '/../../vendor/autoload.php';
 
 class App {
     public function run() {
-        echo 'Hello, world!';
+        echo 'Hello, world!!!!!!!!!!';
     }
 }
