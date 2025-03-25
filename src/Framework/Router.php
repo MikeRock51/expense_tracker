@@ -7,12 +7,13 @@ namespace Framework;
 class Router {
     private array $routes = [];
 
-    public function add(string $path, string $method = 'GET') {
+    public function add(string $path, array $controller, string $method = 'GET') {
         $path = $this->normalizePath($path);
 
         $this->routes[$path] = [
             'method' => $method,
-            'path' => $path
+            'path' => $path,
+            'controller' => $controller,
         ];
     }
 

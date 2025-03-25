@@ -18,7 +18,7 @@ class App {
         echo 'Hello, world!!!!!!!!!!';
     }
 
-    public function add(string $path, string $method = 'GET') {
-        $this->router->add($path, $method);
+    public function add(string $path, array $controller, string $method = 'GET') {
+        $this->router->add($path, $controller, $method);
     }
 }
