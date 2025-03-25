@@ -13,8 +13,12 @@ class App {
     public function __construct() {
         $this->router = new Router();
     }
-    
+
     public function run() {
         echo 'Hello, world!!!!!!!!!!';
+    }
+
+    public function add(string $path, string $method = 'GET') {
+        $this->router->add($path, $method);
     }
 }

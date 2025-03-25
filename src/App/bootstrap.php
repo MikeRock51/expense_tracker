@@ -8,4 +8,8 @@ use Framework\App;
 
 $app = new App();
 
+$app->add('/');
+$app->add('/about');
+$app->add('about/contact');
+
 return $app;
