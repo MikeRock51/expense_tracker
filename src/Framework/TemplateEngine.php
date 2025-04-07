@@ -10,7 +10,11 @@ class TemplateEngine {
 
     public function render(string $template, array $data = []) {
         extract($data, EXTR_SKIP);
-        
-        include $this->basePath . '/' . $template;
+
+        include $this->resolve($template);
+    }
+
+    public function resolve(string $template): string {
+        return $this->basePath . '/' . $template;
     }
 }
