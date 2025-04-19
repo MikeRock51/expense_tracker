@@ -4,16 +4,18 @@ declare(strict_types=1);
 
 namespace Framework;
 
-require __DIR__ . '/../../vendor/autoload.php';
-
-
 class App {
     private Router $router;
     private Container $container;
 
-    public function __construct() {
+    public function __construct(?string $containerDefinitionPath = null) {
         $this->router = new Router();
         $this->container = new Container();
+
+        if ($containerDefinitionPath) {
+            $containerDefinitions = include $containerDefinitionPath;
+            $this->container->addDefinitions($containerDefinitions);
+        }
     }
 
     public function run() {
