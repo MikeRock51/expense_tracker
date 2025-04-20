@@ -8,7 +8,9 @@ class Container {
     private array $definitions = [];
 
     public function addDefinitions(array $newDefinitions): void {
-        dd($newDefinitions);
-        // $this->definitions = [...$this->definitions, ...$newDefinitions];
+        $this->definitions = [...$this->definitions, ...$newDefinitions];
+        dd($this->definitions);
     }
+
+    public function resolve(string $class) {}
 }
