@@ -28,4 +28,8 @@ class App {
     public function add(string $path, array $controller, string $method = 'GET') {
         $this->router->add($path, $controller, $method);
     }
+
+    public function addMiddleware(string $middleware) {
+        $this->addMiddleware($middleware);
+    }
 }

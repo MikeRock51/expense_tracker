@@ -1,18 +1,21 @@
 {
-    "name": "mikerock/expense_tracker",
-    "type": "project",
-    "autoload": {
-        "psr-4": {
-            "Framework\\": "src/Framework",
-            "App\\": "src/App"
-        },
-    "files": ["src/App/Config/Routes.php"]
+  "name": "mikerock/expense_tracker",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "src/Framework",
+      "App\\": "src/App"
     },
-    "authors": [
-        {
-            "name": "Mike",
-            "email": "mikerockmusic51@gmail.com"
-        }
-    ],
-    "require": {}
+    "files": [
+      "src/App/Config/Routes.php",
+      "src/App/Config/Middleware.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Mike",
+      "email": "mikerockmusic51@gmail.com"
+    }
+  ],
+  "require": {}
 }
