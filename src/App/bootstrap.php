@@ -7,8 +7,7 @@ require __DIR__ . '/../../vendor/autoload.php';
 use Framework\App;
 use App\Config\Paths;
 
-use function App\Config\registerMiddleware;
-use function App\Config\registerRoutes;
+use function App\Config\{registerMiddleware, registerRoutes};
 
 
 $app = new App(Paths::SOURCE . 'App/container-definitions.php');
