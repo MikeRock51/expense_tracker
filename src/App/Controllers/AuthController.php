@@ -7,7 +7,7 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class RegisterController {
+class AuthController {
     public function __construct(private TemplateEngine $view) {}
 
     public function register() {
