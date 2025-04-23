@@ -58,12 +58,13 @@ class Container
         return $reflectionClass->newInstanceArgs($dependencies);
     }
 
-    public function get(string $id) {
+    public function get(string $id)
+    {
         if (!array_key_exists($id, $this->definitions)) {
             throw new ContainerException("Class {$id} does not exist in container");
         }
 
-        if ($this->resolved[$id]) {
+        if (array_key_exists($id, $this->resolved)) {
             return $this->resolved[$id];
         }
 

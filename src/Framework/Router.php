@@ -11,7 +11,6 @@ class Router
 
     public function add(string $path, array $controller, string $method = 'GET')
     {
-        error_log($path . $method);
         $path = $this->normalizePath($path);
         $method = strtoupper($method);
 
