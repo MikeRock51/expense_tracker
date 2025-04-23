@@ -7,10 +7,17 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class AuthController {
+class AuthController
+{
     public function __construct(private TemplateEngine $view) {}
 
-    public function register() {
-        $this->view->render('/register.php');
+    public function registerView()
+    {
+        $this->view->render('register.php');
+    }
+
+    public function register()
+    {
+        dd($_POST);
     }
 }

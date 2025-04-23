@@ -10,5 +10,6 @@ use Framework\App;
 function registerRoutes(App $app) {
     $app->add('/', [HomeController::class, 'home']);
     $app->add('/about', [AboutController::class, 'about']);
-    $app->add('/register', [AuthController::class, 'register']);
+    $app->add('/register', [AuthController::class, 'registerView']);
+    $app->add('/register', [AuthController::class, 'register'], 'POST');
 }

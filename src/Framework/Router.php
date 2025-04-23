@@ -11,10 +11,12 @@ class Router
 
     public function add(string $path, array $controller, string $method = 'GET')
     {
+        error_log($path . $method);
         $path = $this->normalizePath($path);
+        $method = strtoupper($method);
 
-        $this->routes[$path] = [
-            'method' => strtoupper($method),
+        $this->routes[] = [
+            'method' => $method,
             'path' => $path,
             'controller' => $controller,
         ];
@@ -40,7 +42,7 @@ class Router
                 $controllerInstance = $container ? $container->resolve($class) : new $class;
                 $action = fn() => $controllerInstance->{$method}();
 
-                foreach($this->middlewares as $middleware) {
+                foreach ($this->middlewares as $middleware) {
                     $middlewareInstance = $container ? $container->resolve($middleware) : new $middleware;
                     $action = fn() => $middlewareInstance->process($action);
                 }
